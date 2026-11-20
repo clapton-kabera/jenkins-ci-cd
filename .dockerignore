@@ -2,4 +2,3 @@
 reports
 .git
 __pycache__
-pytest
