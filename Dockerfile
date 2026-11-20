@@ -13,7 +13,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # copy over the source code
-COPY --chown=appuser:appgroup app.py .
+COPY app.py .
 
 # switch to the non-root user
 USER appuser
