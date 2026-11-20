@@ -65,7 +65,7 @@ pipeline {
             SSH="ssh -o StrictHostKeyChecking=accept-new ec2-user@$EC2_HOST"
             $SSH "docker pull $IMAGE:$BUILD_NUMBER"
             $SSH "docker rm -f flask-app || true"
-            $SSH "docker run -d --name flask-app --restart unless-stopped -p 80:5000 $IMAGE:$BUILD_NUMBER"
+            $SSH "docker run -e APP_VERSION=$BUILD_NUMBER -d --name flask-app --restart unless-stopped -p 80:5000 $IMAGE:$BUILD_NUMBER"
             $SSH "docker image prune -af"
           '''
         }
