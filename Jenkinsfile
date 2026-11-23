@@ -12,6 +12,10 @@ pipeline {
     EC2_HOST = '3.209.28.120'
   }
 
+  triggers {
+    pollSCM('H/5 * * * *')
+  }
+
   stages {
     stage('Checkout') {
       steps {
