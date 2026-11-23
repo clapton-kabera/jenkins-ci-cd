@@ -8,8 +8,8 @@ pipeline {
   }
 
   environment {
-    IMAGE = 'kabera/flask-app'
-    EC2_HOST = '<EC2 IP Address>'
+    IMAGE = 'kaberagclap/flask-app'
+    EC2_HOST = '3.209.28.120'
   }
 
   stages {
